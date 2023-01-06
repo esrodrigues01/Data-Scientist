@@ -1,8 +1,7 @@
 # Projetos de Data Science
-#Projetos de aprendizado de ciências de dados 
 
 ##
-Todos os projetos que foram desenvolvidos durante meu aprendizado
+Lista com o nome e descrição e também imagens de todos os projetos que foram desenvolvidos durante meu aprendizado.
 ##
 - Projeto: Gerador de Senha
 - Linguagem: HTML, CSS, JavaScript
