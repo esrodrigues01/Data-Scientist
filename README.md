@@ -2,6 +2,8 @@
 
 ##
 Lista com o nome e descrição e também imagens de todos os projetos que foram desenvolvidos durante meu aprendizado.
+
+Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/
 ##
 - Projeto: Gerador de Senha
 - Linguagem: HTML, CSS, JavaScript
