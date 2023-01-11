@@ -57,7 +57,9 @@ select
 	sum(t2.price) as receita_total,
 	count(distinct t1.order_id) as qtd_pedidos,
 	count(t2.product_id) as qtd_produtos, 
-	count( distinct t2.product_id) as qtd_produtos_distintos
+	count( distinct t2.product_id) as qtd_produtos_distintos,
+	--to_char(t1.order_approved_at),
+	--to_char(t1.order_approved_at - '2018-06-01') as qtd_ult_vnda
 	--min(date_part('day', interval '1 year')) as qtd_dias_ultima_venda
 	--min(cast(julianday('2018-06-01') - julianday(t1.order_approved_at) as int)) as qtd_dias_ult_venda
 from tb_order t1 
@@ -78,15 +80,31 @@ on t1.order_id = t2.order_id
 group by t2.seller_id 
 
 --------------------------------------------------------------------------------------------------------------
+--Juntando Todos as consultas acima ficamos com:
+
 
 select
 	t2.seller_id,
-	min(t1.order_approved_at) 
+	sum(t2.price) as receita_total,
+	count(distinct t1.order_id) as qtd_pedidos,
+	count(t2.product_id) as qtd_produtos, 
+	count( distinct t2.product_id) as qtd_produtos_distintos,
+	min(date_part('day', interval '1 year')) as qtd_dias_ultima_venda -- Atualizar e Melhorar essa função
 from tb_order t1 
-left join tb_order_item t2 
-on t1.order_id = t2.order_id 
+left join tb_order_item as t2 
+on t1.order_id = t2.order_id
+left join (
+	select
+	t2.seller_id,
+		min(t1.order_approved_at) 
+	from tb_order t1 
+	left join tb_order_item t2 
+	on t1.order_id = t2.order_id 
+	group by t2.seller_id 
+) as t3
+on t2.seller_id  = t3.seller_id
+where t1.order_approved_at  between '2017-06-01' and '2018-06-01'
 group by t2.seller_id 
-
 
 
 
