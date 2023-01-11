@@ -67,6 +67,28 @@ where t1.order_approved_at  between '2017-06-01' and '2018-06-01'
 group by t2.seller_id 
 
 -----------------------------------------------------------------------------------------------------------
+##Descobrindo a data da primeira venda de cada vendedor que está na minha base de dados
+
+select
+	t2.seller_id,
+	min(t1.order_approved_at) 
+from tb_order t1 
+left join tb_order_item t2 
+on t1.order_id = t2.order_id 
+group by t2.seller_id 
+
+--------------------------------------------------------------------------------------------------------------
+
+select
+	t2.seller_id,
+	min(t1.order_approved_at) 
+from tb_order t1 
+left join tb_order_item t2 
+on t1.order_id = t2.order_id 
+group by t2.seller_id 
+
+
+
 
 
 
