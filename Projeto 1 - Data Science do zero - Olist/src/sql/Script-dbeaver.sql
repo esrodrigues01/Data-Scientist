@@ -58,7 +58,8 @@ select
 	count(distinct t1.order_id) as qtd_pedidos,
 	count(t2.product_id) as qtd_produtos, 
 	count( distinct t2.product_id) as qtd_produtos_distintos,
-	--to_char(t1.order_approved_at),
+	extract ()
+	--age(convert(varchar(10) t1.order_approved_at, 103), '2018-06-01')	
 	--to_char(t1.order_approved_at - '2018-06-01') as qtd_ult_vnda
 	--min(date_part('day', interval '1 year')) as qtd_dias_ultima_venda
 	--min(cast(julianday('2018-06-01') - julianday(t1.order_approved_at) as int)) as qtd_dias_ult_venda
