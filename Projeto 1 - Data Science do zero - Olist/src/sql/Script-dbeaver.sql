@@ -84,29 +84,34 @@ group by t2.seller_id
 --Juntando Todos as consultas acima ficamos com:
 
 
-select
-	t2.seller_id,
-	sum(t2.price) as receita_total,
-	count(distinct t1.order_id) as qtd_pedidos,
-	count(t2.product_id) as qtd_produtos, 
-	count( distinct t2.product_id) as qtd_produtos_distintos,
-	min(date_part('day', interval '1 year')) as qtd_dias_ultima_venda,-- Atualizar e Melhorar essa função
-	max(date_part('day', interval 'data_inicio'))
-from tb_order t1 
-left join tb_order_item as t2 
-on t1.order_id = t2.order_id
-left join (
+
 	select
-	t2.seller_id,
-		min(date_part('day', interval '1 year')) as data_inicio
+		t2.seller_id,
+		sum(t2.price) as receita_total,
+		count(distinct t1.order_id) as qtd_pedidos,
+		count(t2.product_id) as qtd_produtos, 
+		count( distinct t2.product_id) as qtd_produtos_distintos,
+		min(to_timestamp(t1.order_approved_at,'YYYYMMDD HH24:MI:SS')  - to_timestamp('2018-06-01 00:00:00','YYYYMMDD HH24:MI:SS')) as qtd_dias_ult_venda,
+		max(to_timestamp('2018-06-01 00:00:00','YYYYMMDD HH24:MI:SS') - to_timestamp(t1.order_approved_at,'YYYYMMDD HH24:MI:SS'))
 	from tb_order t1 
-	left join tb_order_item t2 
-	on t1.order_id = t2.order_id 
-	group by t2.seller_id 
+	left join tb_order_item as t2 
+	on t1.order_id = t2.order_id
+	left join (
+		select
+			t2.seller_id,
+			min(to_timestamp(t1.order_approved_at,'YYYYMMDD HH24:MI:SS')) as data_inicio
+		from tb_order t1 
+		left join tb_order_item t2 
+		on t1.order_id = t2.order_id 
+		group by t2.seller_id 
 	) as t3
-on t2.seller_id  = t3.seller_id
-where t1.order_approved_at  between '2017-06-01' and '2018-06-01'
-group by t2.seller_id 
+	on t2.seller_id  = t3.seller_id
+	where t1.order_approved_at  between '2017-06-01' and '2018-06-01'
+	group by t2.seller_id 
+	
+	
+	
+	select * from tb_order to2 
 
 
 
