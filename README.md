@@ -6,7 +6,7 @@ Lista com o nome e descrição e também imagens de todos os projetos que foram 
 Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/
 
 ##
-- Projeto: Análises de dados na base de dados OLIST
+### Projeto: Análises de dados na base de dados OLIST
 - Linguagem: Python, SQL, Postgres
 - Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
   English: Brazilian E-Commerce Public Dataset by Olist
