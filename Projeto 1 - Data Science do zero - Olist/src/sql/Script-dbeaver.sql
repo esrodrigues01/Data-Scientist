@@ -90,15 +90,15 @@ select
 	count(distinct t1.order_id) as qtd_pedidos,
 	count(t2.product_id) as qtd_produtos, 
 	count( distinct t2.product_id) as qtd_produtos_distintos,
-	min(date_part('day', interval '1 year')) as qtd_dias_ultima_venda,-- Atualizar e Melhorar essa função
-	max(date_part('day', interval 'data_inicio'))
+	min(to_date(t1.order_approved_at,'DDMMYYYY')  - to_date('2018-06-01','DDMMYYYY')) as qtd_dias_ult_venda,
+	max(to_date('2018-06-01','DDMMYYYY') - t3.data_inicio )
 from tb_order t1 
 left join tb_order_item as t2 
 on t1.order_id = t2.order_id
 left join (
 	select
-	t2.seller_id,
-		min(date_part('day', interval t1.order_approved_at)) as data_inicio
+		t2.seller_id,
+		min(to_date(t1.order_approved_at,'DDMMYYYY')) as data_inicio
 	from tb_order t1 
 	left join tb_order_item t2 
 	on t1.order_id = t2.order_id 
