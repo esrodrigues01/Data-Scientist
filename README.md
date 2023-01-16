@@ -6,7 +6,7 @@ Lista com o nome e descrição e também imagens de todos os projetos que foram 
 Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/
 
 ##
-### Projeto: Análises de dados na base de dados OLIST
+### Projeto 1: Análises de dados na base de dados OLIST
 - Linguagem: Python, SQL, Postgres
 - Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
   English: Brazilian E-Commerce Public Dataset by Olist
@@ -17,7 +17,17 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 	This is real commercial data, it has been anonymised, and references to the companies and partners in the review text have been replaced with the names of Game of Thrones great houses.
 "
 - Link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-- Data de Envio ao GitHub: 30/01/2022
+- Data de Envio ao GitHub: 29/01/2022
 - Status: Em Desenvolvimento
  
+##
+
+### Projeto 2: Pesquisas Eleitorais de 2000 a 2022
+- Linguagem: Python, SQL, Postgres
+- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
+  "Dados de Pesquisas eleitorais compiladas pelo poder360"
+- Link: https://basedosdados.org/dataset/br-poder360-pesquisas?bdm_table=microdados
+- Data de Envio ao GitHub: 13/01/2022
+- Status: Em Desenvolvimento
+
 ##
