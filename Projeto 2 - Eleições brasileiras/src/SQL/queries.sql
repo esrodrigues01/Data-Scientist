@@ -19,4 +19,4 @@ and trial_descricao_cenario_19 = 'cenário 1 - estimulado - 1º turno'
 
 
 
-select nome_candidato  from microdados m where trial_instituto_8 = 'Datafolha' and ano = 2022 and cargo = 'presidente'
+select nome_candidato  from microdados m where trial_instituto_8 = 'Datafolha' and ano = 2022 and cargo = 'presidente' and 
