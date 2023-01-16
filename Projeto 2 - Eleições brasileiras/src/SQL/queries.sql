@@ -12,4 +12,4 @@ and ano = 2022
 and cargo ='presidente' 
 and tipo = 'estimulada'
 and turno =1
-
+and trial_descricao_cenario_19 = 'cenário 1 - estimulado - 1º turno'
