@@ -4,7 +4,7 @@ import os
 import seaborn as sns
 import matplotlib
 import matplotlib.pyplot as plt
-%matplotlib inline 
+
 
 ##Lendo os dados CSV que estão na pasta dados
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,4 +55,23 @@ sns.set_style('darkgrid')
 matplotlib.rcParams['font.size'] = 14
 matplotlib.rcParams['figure.figsize'] = (9 , 5)
 matplotlib.rcParams['figure.facecolor'] = '#00000000'
+
+
+#Mapa de Calor
+#Lista de raw_material
+raw_data =["Coarse wool Price",  "Copra Price",  "Cotton Price",  "Fine wool Price", "Hard log Price", 
+         "Hard sawnwood Price",  "Hide Price",  "Plywood Price",  "Rubber Price", "Softlog Price",  "Soft sawnwood Price", 
+         "Wood pulp Price"]
+
+#fazendo a matriz de correlação
+corrmat = df[raw_data].corr()
+
+#Configurando o tamanho e plotando
+fig = plt.figure(figsize=(12,9))
+
+#mascarando a parte triangular superior, pois a matriz é simétrica (repetitiva)
+mask =  np.triu(np.ones_like(corrmat,dtype = bool))
+sns.heatmap(corrmat,vmax= .8, mask = mask, square= True, annot=True)
+plt.show()
+
 
