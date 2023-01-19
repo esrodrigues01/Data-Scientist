@@ -1,7 +1,10 @@
 import numpy as np
 import pandas as pd 
 import os
-
+import seaborn as sns
+import matplotlib
+import matplotlib.pyplot as plt
+%matplotlib inline 
 
 ##Lendo os dados CSV que estão na pasta dados
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,3 +39,20 @@ lista = ["Coarse wool Price", "Coarse wool price % Change", "Copra Price", "Copr
          "Wood pulp Price", "Wood pulp price % Change"]
 df[lista] = df[lista].astype("float")
 print(df.dtypes)
+print(df.head())
+
+
+#Formatando a coluna datetime e definindo como indice para o conjunto de dados
+df.Month = pd.to_datetime(df.Month.str.upper(), format='%b%y', yearfirst=False)
+df = df.set_index('Month')
+print(df.head())
+
+
+#Começando a análise exploratória
+#Usaremos a biblioteca matplotlib.pyolot e seaborn
+
+sns.set_style('darkgrid')
+matplotlib.rcParams['font.size'] = 14
+matplotlib.rcParams['figure.figsize'] = (9 , 5)
+matplotlib.rcParams['figure.facecolor'] = '#00000000'
+
