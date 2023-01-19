@@ -59,6 +59,7 @@ matplotlib.rcParams['figure.facecolor'] = '#00000000'
 
 #Mapa de Calor - PRIMEIRO INSIGHT
 #DEFINIÇÃO DE MAPA DE CALOR: Mostra a corelação entre as matérias-primas e, quanto mais próximo de 1, mais correlacionadas esses materiais estão. 
+#Estatisticamente falando uma correlação forte é acima de 0.7
 #Lista de raw_material
 raw_data =["Coarse wool Price",  "Copra Price",  "Cotton Price",  "Fine wool Price", "Hard log Price", 
          "Hard sawnwood Price",  "Hide Price",  "Plywood Price",  "Rubber Price", "Softlog Price",  "Soft sawnwood Price", 
@@ -81,3 +82,7 @@ corrMatrix = df[changelist].corr()
 sns.heatmap(corrMatrix, annot = True)
 plt.show()
 
+#Montando um deepDive do produto Coarse wool Price e da variação % Coarse wool price % Change
+#Exibindo em um gráfico evolutivo
+axes = df[["Coarse wool Price", "Coarse wool price % Change"]].plot(figsize=(11,9), subplots=True, linewidth = 1)
+plt.show()
