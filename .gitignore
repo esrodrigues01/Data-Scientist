@@ -174,3 +174,10 @@ Projeto 2 - Eleições brasileiras/eleicoes-env/Scripts/plasma_store.exe
 Projeto 2 - Eleições brasileiras/eleicoes-env/Scripts/normalizer.exe
 Projeto 2 - Eleições brasileiras/eleicoes-env/Scripts/pyrsa-decrypt.exe
 *.exe
+*.cfg
+Projeto 3 - Análise Descritiva para geração de insight/analise-descritiva-env/Scripts/activate
+Projeto 3 - Análise Descritiva para geração de insight/analise-descritiva-env/Scripts/Activate.ps1
+Projeto 3 - Análise Descritiva para geração de insight/analise-descritiva-env/Scripts/Activate.ps1
+Projeto 3 - Análise Descritiva para geração de insight/analise-descritiva-env/Scripts/activate.bat
+Projeto 3 - Análise Descritiva para geração de insight/dados/agricultural_raw_material.csv
+Projeto 3 - Análise Descritiva para geração de insight/analise-descritiva-env/Scripts/deactivate.bat
