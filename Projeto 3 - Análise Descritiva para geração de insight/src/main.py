@@ -102,4 +102,16 @@ plt.show()
 #Resposta: Pelos gráficos de histogramas, podemos observar que a maioria das matérias primas tem variação de mudança
 #frequente ideal inferior a 5%
 
-
+#Questao 2: Encontrar a Matéria Prima que tem o menor preço ao longo dos anos
+plt.figure(figsize=(10,10))
+materialList = ["Coarse wool Price",  "Copra Price",  "Cotton Price",  "Fine wool Price", "Hard log Price", 
+         "Hard sawnwood Price",  "Hide Price",  "Plywood Price",  "Rubber Price", "Softlog Price",  "Soft sawnwood Price", 
+         "Wood pulp Price"]
+for i in range(len(materialList)):
+    plt.subplot(4,3, i+1)
+    plt.subplots_adjust(hspace=1, wspace=0.5)
+    plt.title(materialList[i])
+    plt.plot(df[materialList[i]])
+    plt.xticks(rotation=90)
+plt.suptitle("Raw Materiais Price Comparation")
+plt.show()
