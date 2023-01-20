@@ -86,3 +86,16 @@ plt.show()
 #Exibindo em um gráfico evolutivo
 axes = df[["Coarse wool Price", "Coarse wool price % Change"]].plot(figsize=(11,9), subplots=True, linewidth = 1)
 plt.show()
+
+#Fazendo e Respondendo Perguntas:
+# 1 - Descobrir a variação normal do preço de cada matéria-prima
+changelist = changelist = ["Coarse wool price % Change",  "Copra price % Change", "Cotton price % Change",  "Fine wool price % Change",  
+        "Hard log price % Change",  "Hard sawnwood price % Change",  "Hide price % change", "Plywood price % Change",
+         "Rubber price % Change",  "Softlog price % Change", "Soft sawnwood price % Change", "Wood pulp price % Change"]
+for i in range(len(changelist)):
+    plt.figure(figsize=(12,12))
+    df[changelist[i]].hist(figsize=(11,9), linewidth=1)
+    plt.xlabel('% Change')
+    plt.ylabel('Count')
+    plt.legend(changelist[i:], loc='upper center', bbox_to_anchor=(1.2,1))
+plt.show()
