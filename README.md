@@ -38,6 +38,6 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
   "Este conjunto de dados inclui preços e variação percentual de preço para lã grossa, copra, algodão, lã fina, dura longa, madeira serrada dura, couro, madeira compensada, borracha, toras macias, madeira serrada macia e celulose de madeira."
 - Link: https://www.kaggle.com/datasets/kianwee/agricultural-raw-material-prices-19902020?resource=download
 - Data de Envio ao GitHub: 19/01/2022
-- Status: Em Desenvolvimento
+- Status: Em Concluído
 
 ##
