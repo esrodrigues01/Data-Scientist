@@ -1,4 +1,4 @@
-# Projetos de Data Science
+# Projetos de Data Science e Análise de dados
 
 ##
 Lista com o nome e descrição e também imagens de todos os projetos que foram desenvolvidos durante meu aprendizado.
