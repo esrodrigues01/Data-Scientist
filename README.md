@@ -8,7 +8,7 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 ##
 ### Projeto 1: Análises de dados na base de dados OLIST
 - Linguagem: Python, SQL, Postgres
-- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
+- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL"
   English: Brazilian E-Commerce Public Dataset by Olist
 	Welcome! This is a Brazilian ecommerce public dataset of orders made at Olist Store. 
 	The dataset has information of 100k orders from 2016 to 2018 made at multiple marketplaces in Brazil. 
@@ -24,7 +24,7 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 
 ### Projeto 2: Pesquisas Eleitorais de 2000 a 2022
 - Linguagem: Python, SQL, Postgres
-- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
+- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL"
   "Dados de Pesquisas eleitorais compiladas pelo poder360"
 - Link: https://basedosdados.org/dataset/br-poder360-pesquisas?bdm_table=microdados
 - Data de Envio ao GitHub: 13/01/2022
@@ -33,8 +33,8 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 ##
 
 ### Projeto 3: Análise Descritiva para geração de insight
-- Linguagem: Python, SQL, Postgres
-- Descrição: "Código-fonte de uma análise de dados com dados gerados por um banco de dados, usando python e SQL
+- Linguagem: Python
+- Descrição: "Código-fonte de uma análise de dados com dados gerados por um arquivo em .CSV, usando python"
   "Este conjunto de dados inclui preços e variação percentual de preço para lã grossa, copra, algodão, lã fina, dura longa, madeira serrada dura, couro, madeira compensada, borracha, toras macias, madeira serrada macia e celulose de madeira."
 - Link: https://www.kaggle.com/datasets/kianwee/agricultural-raw-material-prices-19902020?resource=download
 - Data de Envio ao GitHub: 19/01/2022
