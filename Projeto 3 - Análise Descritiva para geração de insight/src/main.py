@@ -4,6 +4,7 @@ import os
 import seaborn as sns
 import matplotlib
 import matplotlib.pyplot as plt
+import random as ramdom
 
 
 ##Lendo os dados CSV que estão na pasta dados
@@ -14,8 +15,8 @@ for i in files_names:
     df = pd.read_csv(os.path.join(DATA_DIR,i))
 
 #Explorando o conjunto de dados
-print(df.info)
-print(df.isnull().sum())
+#print(df.info)
+#print(df.isnull().sum())
 
 #Tratando dados ausentes, incorreto ou inválido
 
@@ -30,7 +31,7 @@ df = df.replace('MAY90', np.nan)
 df = df.dropna()
 
 #Checando se todos os valores NaN foram resolvidos
-print(df.isnull().sum())
+#print(df.isnull().sum())
 
 #Convertendo tipos de dados para float
 lista = ["Coarse wool Price", "Coarse wool price % Change", "Copra Price", "Copra price % Change", "Cotton Price", "Cotton price % Change", "Fine wool Price", "Fine wool price % Change", "Hard log Price", 
@@ -38,14 +39,14 @@ lista = ["Coarse wool Price", "Coarse wool price % Change", "Copra Price", "Copr
          "Rubber price % Change", "Softlog Price", "Softlog price % Change", "Soft sawnwood Price", "Soft sawnwood price % Change",
          "Wood pulp Price", "Wood pulp price % Change"]
 df[lista] = df[lista].astype("float")
-print(df.dtypes)
-print(df.head())
+#print(df.dtypes)
+#print(df.head())
 
 
 #Formatando a coluna datetime e definindo como indice para o conjunto de dados
 df.Month = pd.to_datetime(df.Month.str.upper(), format='%b%y', yearfirst=False)
 df = df.set_index('Month')
-print(df.head())
+#print(df.head())
 
 
 #Começando a análise exploratória
@@ -71,7 +72,7 @@ fig = plt.figure(figsize=(12,9))
 #mascarando a parte triangular superior, pois a matriz é simétrica (repetitiva)
 mask =  np.triu(np.ones_like(corrmat,dtype = bool))
 sns.heatmap(corrmat,vmax= .8, mask = mask, square= True, annot=True)
-plt.show()
+#plt.show()
 
 #Mapa de calor mostrando o percentual % 
 changelist = ["Coarse wool price % Change",  "Copra price % Change", "Cotton price % Change",  "Fine wool price % Change",  
@@ -80,12 +81,12 @@ changelist = ["Coarse wool price % Change",  "Copra price % Change", "Cotton pri
 #Gerando a matriz de correlação para o conjunto de dados
 corrMatrix = df[changelist].corr()
 sns.heatmap(corrMatrix, annot = True)
-plt.show()
+#plt.show()
 
 #Montando um deepDive do produto Coarse wool Price e da variação % Coarse wool price % Change
 #Exibindo em um gráfico evolutivo
 axes = df[["Coarse wool Price", "Coarse wool price % Change"]].plot(figsize=(11,9), subplots=True, linewidth = 1)
-plt.show()
+#plt.show()
 
 #Fazendo e Respondendo Perguntas:
 # 1 - Descobrir a variação normal do preço de cada matéria-prima
@@ -98,7 +99,7 @@ for i in range(len(changelist)):
     plt.xlabel('% Change')
     plt.ylabel('Count')
     plt.legend(changelist[i:], loc='upper center', bbox_to_anchor=(1.2,1))
-plt.show()
+#plt.show()
 #Resposta: Pelos gráficos de histogramas, podemos observar que a maioria das matérias primas tem variação de mudança
 #frequente ideal inferior a 5%
 
@@ -114,4 +115,34 @@ for i in range(len(materialList)):
     plt.plot(df[materialList[i]])
     plt.xticks(rotation=90)
 plt.suptitle("Raw Materiais Price Comparation")
+#plt.show()
+#Note que aconteceu algo entre 2008 e  2012 que fizeram os preços da maioria dos produtos subir
+
+#3 - Comparar os precos do Cotton e do Rubber
+plt.figure(figsize=(10,10))
+plt.plot(df[['Cotton Price', 'Rubber Price']])
+plt.title("Raw-Materiais Price Comparation")
+plt.xlabel('Years')
+plt.ylabel('Prices')
+plt.legend(['Cotton Price', 'Rubber Price'], loc='upper center', bbox_to_anchor=(1.2,1))
+#plt.show()
+# Algodão é a matéria prima com menor preço dos ultimos anos
+
+#4 - Qual Matéria-Prima tem a maior e a menor variação de percentual de preço
+plt.figure(figsize=(12,12))
+for i in range(len(changelist)):
+    r = ramdom.random()
+    b = ramdom.random()
+    g = ramdom.random()
+    color = (r,g,b)
+    plt.subplot(4,3,i+1)
+    plt.subplots_adjust(hspace = 1, wspace=0.5)
+    plt.plot(df[changelist[i]], c =  color)
+    plt.xticks(rotation=90)
+    plt.title(changelist[i])
+    plt.xlabel('Years')
+    plt.ylabel('% Change')
 plt.show()
+#Resposta: Podemos notar pelos gráficos que o maior percental de mudança foi para a madeira serrada macia e a menor variação percental é a madeira compenasada.
+
+
