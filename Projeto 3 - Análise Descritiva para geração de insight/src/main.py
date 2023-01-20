@@ -142,7 +142,17 @@ for i in range(len(changelist)):
     plt.title(changelist[i])
     plt.xlabel('Years')
     plt.ylabel('% Change')
-plt.show()
+#plt.show()
 #Resposta: Podemos notar pelos gráficos que o maior percental de mudança foi para a madeira serrada macia e a menor variação percental é a madeira compenasada.
 
-
+#4 - Encontrar as matérias-Primas com mudanças drásticas de preço
+lowlist = ["Cotton Price",  "Fine wool Price", "Hide Price",  "Plywood Price",  "Rubber Price", "Softlog Price",  "Soft sawnwood Price"]
+plt.figure(figsize=(12,12))
+plt.ylabel('Prices')
+plt.xlabel('Years')
+for i in range(len(lowlist)):
+    sns.scatterplot(y=df[lowlist[i]], x=df.index)
+    plt.legend(lowlist, loc = 'upper center', bbox_to_anchor=(1.2,1))
+plt.show()
+#Resposta: A mudança de preco é drastica entre os materiasi de preços baixos para a tora dura e a lã fina para os preços altos.
+ 
