@@ -99,3 +99,7 @@ for i in range(len(changelist)):
     plt.ylabel('Count')
     plt.legend(changelist[i:], loc='upper center', bbox_to_anchor=(1.2,1))
 plt.show()
+#Resposta: Pelos gráficos de histogramas, podemos observar que a maioria das matérias primas tem variação de mudança
+#frequente ideal inferior a 5%
+
+
