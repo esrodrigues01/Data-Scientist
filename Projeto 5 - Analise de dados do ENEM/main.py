@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import matplotlib as mt
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -35,4 +36,11 @@ microdados_enem_selecionados = microDadosEnem.filter(items=colunas_selecionadas_
 coluna_faixa_etaria =  microdados_enem_selecionados['TP_FAIXA_ETARIA']
 #Mostrando na tela ordenados as faixas de idade com mais inscritos 
 print(coluna_faixa_etaria.value_counts().sort_index())
-print(coluna_faixa_etaria.hist(bins=30))
+print(plt.hist(coluna_faixa_etaria, bins=30))
+plt.show()
+#Olhando para quantos alunos fizeram a prova do ENEM por Estados 
+coluna_estados = microdados_enem_selecionados['SG_UF_PROVA']
+print(coluna_estados.value_counts().sort_index())
+print(plt.hist(coluna_estados, bins=30))
+plt.show()
+
