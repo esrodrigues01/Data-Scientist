@@ -40,7 +40,12 @@ print(plt.hist(coluna_faixa_etaria, bins=30))
 plt.show()
 #Olhando para quantos alunos fizeram a prova do ENEM por Estados 
 coluna_estados = microdados_enem_selecionados['SG_UF_PROVA']
-print(coluna_estados.value_counts().sort_index())
+print(coluna_estados.value_counts())
 print(plt.hist(coluna_estados, bins=30))
 plt.show()
 
+#Respondendo Questões levantadas no codigo acima: 
+# 1 - Qual é a faixa etária em que mais alunos fizeram o ENEM?
+# Resposta 1: FAIXA 3: 18 ANOS 
+# 2 - Qual o Estado Brasileiro com mais incritos na prova do ENEM?
+# Resposta 2: SÃO PAULO (SP) COM 509.954 INSCRIÇOES
