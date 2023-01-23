@@ -1,5 +1,7 @@
 import os
 import pandas as pd
+import matplotlib as mt
+import numpy as np
 
 
 ##Lendo os dados CSV que estão na pasta dados
@@ -33,3 +35,4 @@ microdados_enem_selecionados = microDadosEnem.filter(items=colunas_selecionadas_
 coluna_faixa_etaria =  microdados_enem_selecionados['TP_FAIXA_ETARIA']
 #Mostrando na tela ordenados as faixas de idade com mais inscritos 
 print(coluna_faixa_etaria.value_counts().sort_index())
+print(coluna_faixa_etaria.hist(bins=30))
