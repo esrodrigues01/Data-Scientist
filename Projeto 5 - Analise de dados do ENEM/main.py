@@ -9,4 +9,7 @@ files_names  = [i for i in os.listdir(DATA_DIR) if i.endswith('.csv')]
 for i in files_names:
     microDadosEnem = pd.read_csv(os.path.join(DATA_DIR,i),sep=";", encoding="ISO-8859-1")
 print(microDadosEnem.head())
-print(microDadosEnem)
+
+
+#Começando a análise exploratória
+print(microDadosEnem.columns.values)
