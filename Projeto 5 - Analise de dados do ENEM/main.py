@@ -63,7 +63,11 @@ print(microdados_sexo_redacao.groupby('TP_SEXO').max())
 print(microdados_sexo_redacao[microdados_sexo_redacao.NU_NOTA_REDACAO > 0].groupby('TP_SEXO').min())
 #Abaixo Mostrando as médias das notas da redaçao por sexo no ENEM
 print(microdados_sexo_redacao.groupby('TP_SEXO').mean())
-#Abaixo Mostrando a meiana das notas da redaçao por sexo no ENEM
+#Abaixo Mostrando a mediana das notas da redaçao por sexo no ENEM
 print(microdados_sexo_redacao.groupby('TP_SEXO').median())
 #Plotar gráfico para melhor visualização
-print(microdados_sexo_redacao.groupby('TP_SEXO').hist())
+print(microdados_sexo_redacao.groupby('TP_SEXO').hist(bins=30))
+plt.show()
+#Respondendo Questões levantadas no codigo acima: 
+# As notas da redação em relação ao sexo do candidato. O sexo do candidato não tem muita influencia, as diferenças são bem sutis nos dados e gráficos
+#Uma ideia é observaar a nota da redação com os indicadores socioeconomicos dos candidados, teremos uma resposta mais fiel a realidade
