@@ -122,5 +122,11 @@ print(microdados_enem_selecionados.filter(items=['NU_INSCRICAO', 'NO_Q002']).gro
 #Isso demonstra que as mães tem um grau de instrução maior que os Pais
 
 #Olhando o Desempenho em matemática seugndo a Escolaridade dos pais
+
+#Pai
 print(microdados_enem_selecionados.filter(items=['NU_NOTA_MT', 'NO_Q001']).groupby('NO_Q001').count().sort_values(by=['NU_NOTA_MT'], ascending=False))
-#Resultado: Quem tira uma nota maior em matemática é filho de quem tem a
+#Resultado: Quem tira uma nota maior em matemática é filho de quem tem o ensino médio completo
+
+#Mãe
+print(microdados_enem_selecionados.filter(items=['NU_NOTA_MT', 'NO_Q002']).groupby('NO_Q002').count().sort_values(by=['NU_NOTA_MT'], ascending=False))
+#Resultado: Quem tira uma nota maior em matemática é filho de quem tem o ensino médio completo
