@@ -75,3 +75,28 @@ print(microdados_sexo_redacao.groupby('TP_SEXO').describe())
 #Respondendo Questões levantadas no codigo acima: 
 # As notas da redação em relação ao sexo do candidato. O sexo do candidato não tem muita influencia, as diferenças são bem sutis nos dados e gráficos
 #Uma ideia é observaar a nota da redação com os indicadores socioeconomicos dos candidados, teremos uma resposta mais fiel a realidade
+
+#Selecionando nossas colunas de interesse
+#Selecionado: Numero da inscrição, Nota em Matemática, Questões 1 e 2 do questinário
+colunas_selecionadas_questoes = ['NU_INSCRICAO','NU_NOTA_MT', 'Q001', 'Q002']
+
+#Criando um novo dataframe com os dados que queremos analisar
+microdados_enem_selecionados = microDadosEnem.filter(items=colunas_selecionadas_questoes)
+print(microdados_enem_selecionados.head())
+#Removendo as linhas com NaN valores 
+microdados_enem_selecionados =  microdados_enem_selecionados.dropna()
+
+#Definindo um dicionário para melhor visualização dos dados
+
+q001e002Dicionario = {
+    'A': 'Nunca Estudou',
+    'B': 'Não Completou a 4ª Série/ 5° Anodo Ensino Fundamental',
+    'C': 'Completou a 4ª Série/ 5° Ano do Ensino Fundamental, mas não completou a 8ª Série/ 9° Ano do Ensino Fundamental ',
+    'D': 'Completou a 8ª Série/ 9° Ano do Ensino Fundamental, mas não completou o Ensino Médio',
+    'E': 'Completou o Ensino Médio, mas não completou a Faculdade',
+    'F': 'Completou a Faculdade, mas não completou a Pós-Graduação',
+    'G': 'Completou a Pós-Graduação',
+    'H': 'Não Sei'
+}
+
+
