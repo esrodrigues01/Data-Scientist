@@ -68,6 +68,10 @@ print(microdados_sexo_redacao.groupby('TP_SEXO').median())
 #Plotar gráfico para melhor visualização
 print(microdados_sexo_redacao.groupby('TP_SEXO').hist(bins=30))
 plt.show()
+#Mostrando um método mais completo para visualizar os dados; describe(), ele nos fornece uma noção do conjunto de dados. 
+#Fornece: Contagem, Média, Desvio Padrão, minimo, distribuição por quartiz, e o máximo
+print(microdados_sexo_redacao.groupby('TP_SEXO').describe())
+
 #Respondendo Questões levantadas no codigo acima: 
 # As notas da redação em relação ao sexo do candidato. O sexo do candidato não tem muita influencia, as diferenças são bem sutis nos dados e gráficos
 #Uma ideia é observaar a nota da redação com os indicadores socioeconomicos dos candidados, teremos uma resposta mais fiel a realidade
