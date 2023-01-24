@@ -90,7 +90,7 @@ microdados_enem_selecionados =  microdados_enem_selecionados.dropna()
 
 q001e002Dicionario = {
     'A': 'Nunca Estudou',
-    'B': 'Não Completou a 4ª Série/ 5° Anodo Ensino Fundamental',
+    'B': 'Não Completou a 4ª Série/ 5° Ano do Ensino Fundamental',
     'C': 'Completou a 4ª Série/ 5° Ano do Ensino Fundamental, mas não completou a 8ª Série/ 9° Ano do Ensino Fundamental ',
     'D': 'Completou a 8ª Série/ 9° Ano do Ensino Fundamental, mas não completou o Ensino Médio',
     'E': 'Completou o Ensino Médio, mas não completou a Faculdade',
