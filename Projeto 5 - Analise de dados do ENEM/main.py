@@ -78,7 +78,7 @@ print(microdados_sexo_redacao.groupby('TP_SEXO').describe())
 
 #Selecionando nossas colunas de interesse
 #Selecionado: Numero da inscrição, Nota em Matemática, Questões 1 e 2 do questinário
-colunas_selecionadas_questoes = ['NU_INSCRICAO','NU_NOTA_MT', 'Q001', 'Q002']
+colunas_selecionadas_questoes = ['NU_INSCRICAO','NU_NOTA_MT', 'Q001', 'Q002', 'NU_NOTA_REDACAO']
 
 #Criando um novo dataframe com os dados que queremos analisar
 microdados_enem_selecionados = microDadosEnem.filter(items=colunas_selecionadas_questoes)
@@ -140,3 +140,6 @@ print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q001']).
 #Mãe
 print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q002']).groupby('NO_Q002').count().sort_values(by=['NU_NOTA_REDACAO'], ascending=False))
 #Resultado: Quem tira uma nota maior em REDAÇÂO é filho de quem tem o ensino médio completo
+
+print(plt.plot(colunas_selecionadas_questoes))
+plt.show()
