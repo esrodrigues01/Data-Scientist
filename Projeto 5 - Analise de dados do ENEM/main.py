@@ -99,4 +99,13 @@ q001e002Dicionario = {
     'H': 'Não Sei'
 }
 
+print(microdados_enem_selecionados.filter(items=['Q001', 'NU_INSCRICAO']).groupby('Q001').count())
 
+#Criando Novas colunas no dataFrame
+#vamos criar a coluna NO_Q001 no qual exibe as informações do dicionário
+microdados_enem_selecionados['NO_Q001'] = [q001e002Dicionario[resp] for resp in microdados_enem_selecionados.Q001]
+print(microdados_enem_selecionados.head())
+
+#Vamos Criar a coluna NO_Q002
+microdados_enem_selecionados['NO_Q002'] = [q001e002Dicionario[resp] for resp in microdados_enem_selecionados.Q002]
+print(microdados_enem_selecionados.head())
