@@ -53,7 +53,17 @@ plt.show()
 #Codigo abaixo se refere a descobrirmos qual sexo teve as melhores notas na redação do ENEM
 colunas_selecionadas = ['NU_NOTA_REDACAO', 'TP_SEXO']
 microdados_sexo_redacao = microDadosEnem.filter(items=colunas_selecionadas)
-print(microdados_sexo_redacao.head())
+#print(microdados_sexo_redacao.head())
 #limpando os valores NaN da variáve NU_NOTA_REDACAO
 microdados_sexo_redacao = microdados_sexo_redacao.dropna()
 print(microdados_sexo_redacao.head())
+print(microdados_sexo_redacao.groupby('TP_SEXO').count())
+print(microdados_sexo_redacao.groupby('TP_SEXO').max())
+#Abaixo Mostrando as notas minimas maiores que 0  de ambos os sexos
+print(microdados_sexo_redacao[microdados_sexo_redacao.NU_NOTA_REDACAO > 0].groupby('TP_SEXO').min())
+#Abaixo Mostrando as médias das notas da redaçao por sexo no ENEM
+print(microdados_sexo_redacao.groupby('TP_SEXO').mean())
+#Abaixo Mostrando a meiana das notas da redaçao por sexo no ENEM
+print(microdados_sexo_redacao.groupby('TP_SEXO').median())
+#Plotar gráfico para melhor visualização
+print(microdados_sexo_redacao.groupby('TP_SEXO').hist())
