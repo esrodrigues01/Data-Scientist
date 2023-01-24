@@ -109,3 +109,18 @@ print(microdados_enem_selecionados.head())
 #Vamos Criar a coluna NO_Q002
 microdados_enem_selecionados['NO_Q002'] = [q001e002Dicionario[resp] for resp in microdados_enem_selecionados.Q002]
 print(microdados_enem_selecionados.head())
+
+#Comparando a distribuição do nível de escolaridade dos pais no conjunto de dados
+#Olhando  para a escoladidade do pai 
+print(microdados_enem_selecionados.filter(items=['NU_INSCRICAO', 'NO_Q001']).groupby('NO_Q001').count().sort_values(by=['NU_INSCRICAO'], ascending=False))
+
+#Olhando agora para a escolaridade das mães
+print(microdados_enem_selecionados.filter(items=['NU_INSCRICAO', 'NO_Q002']).groupby('NO_Q002').count().sort_values(by=['NU_INSCRICAO'], ascending=False))
+
+#Respostas para as analises acima: A maior escolaridade dos pais é o Ensino médio, cerca de 683.633 pessoas seguida de não ter completado o ensino fundamental 4ª série
+#Já para as mães a maior quantidade delas terminou o ensino médio e em segundo lugar completou a faculdade
+#Isso demonstra que as mães tem um grau de instrução maior que os Pais
+
+#Olhando o Desempenho em matemática seugndo a Escolaridade dos pais
+print(microdados_enem_selecionados.filter(items=['NU_NOTA_MT', 'NO_Q001']).groupby('NO_Q001').count().sort_values(by=['NU_NOTA_MT'], ascending=False))
+#Resultado: Quem tira uma nota maior em matemática é filho de quem tem a
