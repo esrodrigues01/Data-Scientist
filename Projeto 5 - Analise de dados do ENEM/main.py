@@ -130,3 +130,13 @@ print(microdados_enem_selecionados.filter(items=['NU_NOTA_MT', 'NO_Q001']).group
 #Mãe
 print(microdados_enem_selecionados.filter(items=['NU_NOTA_MT', 'NO_Q002']).groupby('NO_Q002').count().sort_values(by=['NU_NOTA_MT'], ascending=False))
 #Resultado: Quem tira uma nota maior em matemática é filho de quem tem o ensino médio completo
+
+#Olhando o Desempenho em REDAÇÂO seugndo a Escolaridade dos pais
+
+#Pai
+print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q001']).groupby('NO_Q001').count().sort_values(by=['NU_NOTA_REDACAO'], ascending=False))
+#Resultado: Quem tira uma nota maior em REDAÇÂO é filho de quem tem o ensino médio completo
+
+#Mãe
+print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q002']).groupby('NO_Q002').count().sort_values(by=['NU_NOTA_REDACAO'], ascending=False))
+#Resultado: Quem tira uma nota maior em REDAÇÂO é filho de quem tem o ensino médio completo
