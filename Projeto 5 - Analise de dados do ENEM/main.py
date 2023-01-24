@@ -49,3 +49,11 @@ plt.show()
 # Resposta 1: FAIXA 3: 18 ANOS 
 # 2 - Qual o Estado Brasileiro com mais incritos na prova do ENEM?
 # Resposta 2: SÃO PAULO (SP) COM 509.954 INSCRIÇOES
+
+#Codigo abaixo se refere a descobrirmos qual sexo teve as melhores notas na redação do ENEM
+colunas_selecionadas = ['NU_NOTA_REDACAO', 'TP_SEXO']
+microdados_sexo_redacao = microDadosEnem.filter(items=colunas_selecionadas)
+print(microdados_sexo_redacao.head())
+#limpando os valores NaN da variáve NU_NOTA_REDACAO
+microdados_sexo_redacao = microdados_sexo_redacao.dropna()
+print(microdados_sexo_redacao.head())
