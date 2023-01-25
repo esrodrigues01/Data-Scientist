@@ -150,4 +150,10 @@ microdados_enem_selecionados['SG_UF_PROVA'] = microDadosEnem.SG_UF_PROVA
 print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q002']).where(microdados_enem_selecionados.SG_UF_PROVA == 'MT').groupby('NO_Q002').mean().sort_values(by=['NU_NOTA_REDACAO'], ascending=False))
 
 #Exibindo médias das notas da redação dos participantes por Estado 
-print(microdados_enem_selecionados.filter(items=['SG_UF_PROVA', 'NU_NOTA_REDACAO', 'NO_Q002']).groupby('NO_Q002' ,'SG_UF_PROVA').mean())
+print(microdados_enem_selecionados.filter(items=['SG_UF_PROVA', 'NU_NOTA_REDACAO', 'NO_Q002']).groupby(['NO_Q002' ,'SG_UF_PROVA']).mean())
+
+#Mostrando em gráfico para verificar a tendencia por Estado 
+fig, ax = plt.subplots(figsize=(10,7))
+plt.suptitle('Nota Redação X Escolaridade X Estado')
+print(microdados_enem_selecionados.filter(items=['SG_UF_PROVA', 'NU_NOTA_REDACAO', 'Q002']).groupby(['Q002' ,'SG_UF_PROVA']).mean().sort_values(by='NU_NOTA_REDACAO', ascending=False).unstack().plot(ax=ax,))
+plt.show()
