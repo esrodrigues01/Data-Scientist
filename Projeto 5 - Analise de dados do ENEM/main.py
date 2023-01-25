@@ -143,3 +143,11 @@ print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q002']).
 
 print(plt.plot(colunas_selecionadas_questoes))
 plt.show()
+
+microdados_enem_selecionados['SG_UF_PROVA'] = microDadosEnem.SG_UF_PROVA
+
+#Exibindo médias das notas da redação dos participantes do Estado de Mato Grosso
+print(microdados_enem_selecionados.filter(items=['NU_NOTA_REDACAO', 'NO_Q002']).where(microdados_enem_selecionados.SG_UF_PROVA == 'MT').groupby('NO_Q002').mean().sort_values(by=['NU_NOTA_REDACAO'], ascending=False))
+
+#Exibindo médias das notas da redação dos participantes por Estado 
+print(microdados_enem_selecionados.filter(items=['SG_UF_PROVA', 'NU_NOTA_REDACAO', 'NO_Q002']).groupby('NO_Q002' ,'SG_UF_PROVA').mean())
