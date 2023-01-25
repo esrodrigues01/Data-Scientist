@@ -157,3 +157,4 @@ fig, ax = plt.subplots(figsize=(10,7))
 plt.suptitle('Nota Redação X Escolaridade X Estado')
 print(microdados_enem_selecionados.filter(items=['SG_UF_PROVA', 'NU_NOTA_REDACAO', 'Q002']).groupby(['Q002' ,'SG_UF_PROVA']).mean().sort_values(by='NU_NOTA_REDACAO', ascending=False).unstack().plot(ax=ax,))
 plt.show()
+
