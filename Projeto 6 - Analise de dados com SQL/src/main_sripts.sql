@@ -35,3 +35,13 @@ and trial_sigla_partido_22 != '* TRIAL * T'
 and trial_sigla_partido_22 != '* TRIAL * TR'
 and trial_sigla_partido_22 != '* TRIAL * TRI')
 order by trial_sigla_partido_22;
+
+-- Limpando dados NULL e * das pesquisas 
+
+select 
+	*
+from microdados m 
+where instituto in ('Datafolha', 'Ibope') 
+and sigla_uf is not null 
+and sigla_uf != '* '
+order by sigla_uf 
