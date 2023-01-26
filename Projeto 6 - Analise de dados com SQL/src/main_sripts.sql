@@ -37,7 +37,6 @@ and trial_sigla_partido_22 != '* TRIAL * TRI')
 order by trial_sigla_partido_22;
 
 -- Limpando dados NULL e * das pesquisas 
-
 select 
 	*
 from microdados m 
@@ -45,3 +44,17 @@ where instituto in ('Datafolha', 'Ibope')
 and sigla_uf is not null 
 and sigla_uf != '* '
 order by sigla_uf 
+
+--Respondendo ao questionamento de consultar todas as pesquisas eleitorais realizadas em 2018 para presidente ordenando por turno
+select 
+	distinct id_pesquisa, 
+	ano, 
+	trial_cargo_5,
+	trial_turno_16, 
+	data_referencia, 
+	instituto
+from microdados m  
+where ano = 2018 and trial_cargo_5 = 'presidente'
+order by trial_turno_16
+
+
