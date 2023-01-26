@@ -17,6 +17,7 @@ from microdados m
 where (instituto = 'Datafolha' or instituto = 'Ibope') and (ano > 2013) and (sigla_uf = 'MT')
 
 --Descobrir as siglas de partidos distintos que concorreram nas eleições a partir de 2014
+--Detalhe que limpamos os campos que tinha n/a entre outros dados incorretos.
 select
 	distinct trial_sigla_partido_22  
 from microdados m 
@@ -28,7 +29,9 @@ and trial_sigla_partido_22 != '* T'
 and trial_sigla_partido_22 != '* TR'
 and trial_sigla_partido_22 != '* TRIA'
 and trial_sigla_partido_22 != '* TRIAL'
+and trial_sigla_partido_22 != '* TRIAL '
 and trial_sigla_partido_22 != '* TRIAL *'
 and trial_sigla_partido_22 != '* TRIAL * T'
 and trial_sigla_partido_22 != '* TRIAL * TR'
-and trial_sigla_partido_22 != '* TRIAL * TRI');
+and trial_sigla_partido_22 != '* TRIAL * TRI')
+order by trial_sigla_partido_22;
