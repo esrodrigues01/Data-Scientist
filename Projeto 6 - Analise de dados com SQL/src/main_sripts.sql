@@ -4,3 +4,8 @@ select
 	trial_sigla_partido_22 
 from microdados m 
 where trial_nome_municipio_4 = 'Várzea Grande'
+
+--Remover Repetições
+select
+	distinct instituto 
+from microdados m 
