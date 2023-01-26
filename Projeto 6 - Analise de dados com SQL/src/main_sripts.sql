@@ -21,7 +21,7 @@ where (instituto = 'Datafolha' or instituto = 'Ibope') and (ano > 2013) and (sig
 select
 	distinct trial_sigla_partido_22  
 from microdados m 
-where ano >= 2014 
+where ano between 2014 and 2020
 and (trial_sigla_partido_22 != 'sem partido' 
 and trial_sigla_partido_22 != 'N/A' 
 and trial_sigla_partido_22 != '* ' 
