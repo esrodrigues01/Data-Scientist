@@ -1,3 +1,5 @@
+--Codigo ultilizado no googleBigQuery
+
 --Selecionando uma lista com os nomes e os cpf dos candidatos a governador de Mato Grosso
 SELECT DISTINCT
  nome_candidato,
