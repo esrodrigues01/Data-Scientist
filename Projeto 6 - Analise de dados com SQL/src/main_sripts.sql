@@ -46,6 +46,7 @@ and sigla_uf != '* '
 order by sigla_uf 
 
 --Respondendo ao questionamento de consultar todas as pesquisas eleitorais realizadas em 2018 para presidente ordenando por turno
+--Limpando os dados com inconsistencias
 select 
 	distinct id_pesquisa, 
 	ano, 
@@ -54,7 +55,51 @@ select
 	data_referencia, 
 	instituto
 from microdados m  
-where ano = 2018 and trial_cargo_5 = 'presidente'
+where ano = 2018 
+and trial_cargo_5 = 'presidente'
+and trial_cargo_5 != 'N/A' 
+and trial_cargo_5 != '* ' 
+and trial_cargo_5 != '* T'
+and trial_cargo_5 != '* TR'
+and trial_cargo_5 != '* TRIA'
+and trial_cargo_5 != '* TRIAL'
+and trial_cargo_5 != '* TRIAL '
+and trial_cargo_5 != '* TRIAL *'
+and trial_cargo_5 != '* TRIAL * T'
+and trial_cargo_5 != '* TRIAL * TR'
+and trial_cargo_5 != '* TRIAL * TRI'
+and instituto != 'N/A' 
+and instituto != '* ' 
+and instituto != '* T'
+and instituto != '* TR'
+and instituto != '* TRI'
+and instituto != '* TRIA'
+and instituto != '* TRIAL'
+and instituto != '* TRIAL '
+and instituto != '* TRIAL *'
+and instituto != '* TRIAL * '
+and instituto != '* TRIAL * T'
+and instituto != '* TRIAL * TR'
+and instituto != '* TRIAL * TRIAL '
+and instituto != '* TRIAL * TRIA'
+and instituto != '* TRIAL * TRIAL * TRIAL * TR'
+and data_referencia  != 'N/A' 
+and data_referencia != '* ' 
+and data_referencia != '* T'
+and data_referencia != '* TR'
+and data_referencia != '* TRI'
+and data_referencia != '* TRIA'
+and data_referencia != '* TRIAL'
+and data_referencia != '* TRIAL '
+and data_referencia != '* TRIAL *'
+and data_referencia != '* TRIAL * '
+and data_referencia != '* TRIAL * T'
+and data_referencia != '* TRIAL * TR'
+and data_referencia != '* TRIAL * TRIAL '
+and data_referencia != '* TRIAL * TRIA'
+and data_referencia != '* TRIAL * TRIAL * TRIAL * TR'
+and data_referencia != '* TRIAL * TRI'
+and data_referencia != '* TRIAL * TRIAL *'
 order by trial_turno_16
 
 
