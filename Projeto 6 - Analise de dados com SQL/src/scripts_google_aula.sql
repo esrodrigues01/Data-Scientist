@@ -25,3 +25,13 @@ SELECT
   count(distinct cpf_cnpj_doador) as QTD_DOADORES_DISTINTOS
 from `basedosdados.br_tse_eleicoes.receitas_candidato` 
 where ano = 2018 and sigla_uf = 'MT' 
+
+
+--Mostrando a quantidade de doadores (CPF e CNPJ) de campanhas nos estados brasileiros
+SELECT 
+  sigla_uf,
+  count(distinct cpf_cnpj_doador) as QTD_DOADORES_DISTINTOS
+from `basedosdados.br_tse_eleicoes.receitas_candidato` 
+where ano = 2018 and cargo = 'governador'
+GROUP BY sigla_uf 
+ORDER BY QTD_DOADORES_DISTINTOS DESC
