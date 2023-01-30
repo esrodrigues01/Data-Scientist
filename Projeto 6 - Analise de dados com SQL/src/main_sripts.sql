@@ -5,7 +5,7 @@ select
 from microdados m 
 where trial_nome_municipio_4 = 'Várzea Grande'
 
---Remover Repetições
+--Remover Repetições de dados 
 select
 	distinct instituto 
 from microdados m 
