@@ -1,0 +1,2 @@
+Prever o mercado de ações é uma das aplicações mais importantes do aprendizado de máquina em finanças.
+Link do artigo: https://thecleverprogrammer.com/2020/11/14/stock-price-prediction-using-machine-learning/
