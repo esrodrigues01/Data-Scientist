@@ -17,3 +17,7 @@ def prepare_data(df,forecast_col, forecast_out, test_size):
     response = [x_train, x_test, y_train, y_test, x_lately]
 
     return response
+
+#ler os dados 
+df = pd.read_csv("data\MSFT.csv")
+df = df[df.symbol == "MSFT"]
