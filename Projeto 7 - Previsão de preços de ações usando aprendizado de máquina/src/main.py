@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn import preprocessing 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression 
+import os
 
 #preparação dos dados 
 def prepare_data(df,forecast_col, forecast_out, test_size):
@@ -18,6 +19,12 @@ def prepare_data(df,forecast_col, forecast_out, test_size):
 
     return response
 
-#ler os dados 
-df = pd.read_csv("data\MSFT.csv")
-df = df[df.symbol == "MSFT"]
+##Lendo os dados CSV que estão na pasta dados
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR,'data')
+files_names  = [i for i in os.listdir(DATA_DIR) if i.endswith('.csv')]
+for i in files_names:
+    microDadosEnem = pd.read_csv(os.path.join(DATA_DIR,i),sep=",", encoding="ISO-8859-1")
+
+print (microDadosEnem)
+
