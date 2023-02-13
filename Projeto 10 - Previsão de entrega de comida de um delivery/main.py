@@ -6,7 +6,7 @@ import statsmodels
 dados = pd.read_csv("deliverytime.txt")
 #print(dados.head())
 #dados.info()
-print(dados.isnull().sum())
+#print(dados.isnull().sum())
 
 # R = Raio do planeta Terra 
 R = 6371
@@ -36,10 +36,22 @@ for i in range(len(dados)):
 
 #Desenvolvendo a exploração de dados 
 
+#Analisando a relação entre a distância e o tempo gasto para entregar a comida:
 figure = px.scatter(data_frame = dados,
-                    x = "distance",
+                   x = "distance",
+                   y = "Time_taken(min)",
+                   size="Time_taken(min)",
+                   trendline= "ols",
+                   title="Relação entre distancia e tempo gasto")
+figure.show()
+
+#Vejamos agora a relação entre o tempo de entrega da comida e a idade do entregador:
+figure = px.scatter(data_frame = dados,
+                    x = "Delivery_person_Age",
                     y = "Time_taken(min)",
-                    size="Time_taken(min)",
+                    size = "Time_taken(min)",
+                    color = "distance",
                     trendline= "ols",
-                    title="Relação entre distancia e tempo gasto")
+                    title="Relação entre Tempo de entrega e Idade"
+                    )
 figure.show()
