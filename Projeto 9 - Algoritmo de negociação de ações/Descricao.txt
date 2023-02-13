@@ -1,0 +1,6 @@
+Negociação algorítmica é o uso de algoritmos no mercado financeiro para tomar decisões comerciais. 
+A JP Morgan Chase & Co. é uma das empresas que usam Algorithmic Trading para decisões de investimento.
+Portanto, se você deseja aprender como implementar uma estratégia de negociação algorítmica, este artigo é para você. 
+Neste artigo, vou levá-lo através de uma estratégia de negociação algorítmica usando Python.
+
+Link artigo = https://thecleverprogrammer.com/2023/01/23/algorithmic-trading-using-python/
