@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as np
 import plotly.express as px 
+import statsmodels 
 
 dados = pd.read_csv("deliverytime.txt")
 #print(dados.head())
@@ -31,4 +32,14 @@ for i in range(len(dados)):
                                            dados.loc[i,'Delivery_location_latitude'],
                                            dados.loc[i,'Delivery_location_longitude'])
 
-print(dados.head())
+#print(dados.head())
+
+#Desenvolvendo a exploração de dados 
+
+figure = px.scatter(data_frame = dados,
+                    x = "distance",
+                    y = "Time_taken(min)",
+                    size="Time_taken(min)",
+                    trendline= "ols",
+                    title="Relação entre distancia e tempo gasto")
+figure.show()
