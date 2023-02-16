@@ -81,3 +81,14 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 
 --
 
+### Projeto 8: Modelo de Deep Learning baseado na memória de curto prazo (LSTM)
+- Linguagem: SQL
+- Descrição: "A previsão de preços de ações é uma área de grande interesse para investidores e pesquisadores financeiros. A utilização de técnicas de aprendizado de máquina (Machine Learning) em Python tem se mostrado uma opção eficiente para a previsão de preços de ações. O primeiro passo na construção de um modelo de previsão de preços de ações é a coleta de dados históricos. O próximo passo é a seleção do algoritmo de Machine Learning a ser utilizado. Com o algoritmo escolhido, é realizado o treinamento do modelo, utilizando dados históricos para estimar os parâmetros do modelo."
+- Insights Extraídos: "Em Produção..."
+- Link: 
+- Data de Envio ao GitHub: 09/02/2022
+- Status: Em Desenvolvimento
+
+##
+
+--
