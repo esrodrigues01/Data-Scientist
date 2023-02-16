@@ -3,6 +3,8 @@ import numpy as np
 import plotly.express as px 
 import statsmodels 
 from sklearn.model_selection import train_test_split
+from keras.models import Sequential
+from keras.layers import Dense, LSTM
 
 
 dados = pd.read_csv("deliverytime.txt")
@@ -45,7 +47,7 @@ figure = px.scatter(data_frame = dados,
                    size="Time_taken(min)",
                    trendline= "ols",
                    title="Relação entre distancia e tempo gasto")
-figure.show()
+#figure.show()
 
 #Vejamos agora a relação entre o tempo de entrega da comida e a idade do entregador:
 figure = px.scatter(data_frame = dados,
@@ -56,7 +58,7 @@ figure = px.scatter(data_frame = dados,
                     trendline= "ols",
                     title="Relação entre Tempo de entrega e Idade"
                     )
-figure.show()
+#figure.show()
 
 #Relação entre o tempo gasto para entregar a comida e as avaliações do entregador parceiro
 figure = px.scatter(data_frame = dados,
@@ -67,7 +69,7 @@ figure = px.scatter(data_frame = dados,
                     trendline= "ols",
                     title="Relação entre Tempo de entrega e Avaliações do entregador"
                     )
-figure.show()
+#figure.show()
 
 #vejamos se o tipo de comida encomendada pelo cliente e o tipo de Moto utilizada pelo entregador parceiro influenciam ou não o tempo de entrega:
 
@@ -75,7 +77,7 @@ fig = px.box(dados,
              x = "Type_of_vehicle",
              y = "Time_taken(min)",
              color = "Type_of_order")
-fig.show()
+#fig.show()
 
 #Agora vamos treinar um modelo de Machine Learning usando um modelo de rede neural LSTM para a tarefa de previsão de tempo de entrega de comida:
 
@@ -87,3 +89,9 @@ y = np.array(dados[["Time_taken(min)"]])
 xtrain, xtest, ytrain, ytest = train_test_split(x,y, test_size=0.10, random_state=42)
 
 #Criando o modelo de rede neural LSTM
+model = Sequential()
+model.add(LSTM(128, return_sequences = True, input_shape = (xtrain.shape[1], 1)))
+model.add(LSTM(64, return_sequences= False))
+model.add(Dense(25))
+model.add(Dense(1))
+model.sumary()
