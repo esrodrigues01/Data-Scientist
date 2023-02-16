@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import plotly.express as px 
 import statsmodels 
+from sklearn.model_selection import train_test_split
+
 
 dados = pd.read_csv("deliverytime.txt")
 #print(dados.head())
@@ -66,3 +68,22 @@ figure = px.scatter(data_frame = dados,
                     title="Relação entre Tempo de entrega e Avaliações do entregador"
                     )
 figure.show()
+
+#vejamos se o tipo de comida encomendada pelo cliente e o tipo de Moto utilizada pelo entregador parceiro influenciam ou não o tempo de entrega:
+
+fig = px.box(dados, 
+             x = "Type_of_vehicle",
+             y = "Time_taken(min)",
+             color = "Type_of_order")
+fig.show()
+
+#Agora vamos treinar um modelo de Machine Learning usando um modelo de rede neural LSTM para a tarefa de previsão de tempo de entrega de comida:
+
+#Dividindo os dados
+x = np.array(dados[["Delivery_person_Age",
+                    "Delivery_person_Ratings",
+                    "distance"]])
+y = np.array(dados[["Time_taken(min)"]])
+xtrain, xtest, ytrain, ytest = train_test_split(x,y, test_size=0.10, random_state=42)
+
+#Criando o modelo de rede neural LSTM
