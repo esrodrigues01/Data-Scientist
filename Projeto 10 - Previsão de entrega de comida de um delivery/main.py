@@ -55,3 +55,14 @@ figure = px.scatter(data_frame = dados,
                     title="Relação entre Tempo de entrega e Idade"
                     )
 figure.show()
+
+#Relação entre o tempo gasto para entregar a comida e as avaliações do entregador parceiro
+figure = px.scatter(data_frame = dados,
+                    x = "Delivery_person_Ratings",
+                    y = "Time_taken(min)",
+                    size = "Time_taken(min)",
+                    color = "distance",
+                    trendline= "ols",
+                    title="Relação entre Tempo de entrega e Avaliações do entregador"
+                    )
+figure.show()
