@@ -54,3 +54,13 @@ Link para templates de aprendizado: https://www.analyticsvidhya.com/blog/2018/05
 - Status: Concluído
 
 ##
+
+--
+
+### Projeto 6: Análise de dados das eleições de 2000 à 2022 usando a linguagem de dados SQL
+- Linguagem: SQL
+- Descrição: "Os dados de eleições brasileiras de 2000 a 2022 em SQL incluem informações sobre os candidatos, partidos políticos, cargos disputados, resultados das eleições e informações geográficas, como municípios e estados."
+- Insights Extraídos: "Dados das pesquisas do DATAFOLHA ou Ibope a partir de 2014 no estado de Mato Grosso; Limpeza de dados em que os campos que tinha n/a entre outros dados incorretos; Selecionando uma lista com os nomes e os cpf dos candidatos a governador de Mato Grosso; Mostrando o valor máximo, o minimo, a média e a soma total das receita doadas durante a campanha de 2018.; Mostrando a quantidade de doadores (CPF e CNPJ) de campanhas no Estado de MT.; Mostrando a quantidade de doadores (CPF e CNPJ) de campanhas nos estados brasileiros."
+- Link: (https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem)
+- Data de Envio ao GitHub: 23/01/2022
+- Status: Concluído
