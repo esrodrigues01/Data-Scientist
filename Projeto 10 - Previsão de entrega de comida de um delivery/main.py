@@ -5,6 +5,7 @@ import statsmodels
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
+import tensorflow
 
 
 dados = pd.read_csv("deliverytime.txt")
@@ -95,3 +96,16 @@ model.add(LSTM(64, return_sequences= False))
 model.add(Dense(25))
 model.add(Dense(1))
 model.summary()
+
+#Treinando o modelo 
+model.compile(optimizer = 'adam', loss = 'mean_squared_error')
+model.fit(xtrain, ytrain, batch_size=1, epochs=9)
+
+#Agora vamos testar o desempenho do nosso modelo fornecendo entradas para prever o tempo de entrega da comida
+print("Modelo de previsão de tempo de entrega de comida")
+a = int(input("Idade do Entregador Parceiro: "))
+b = float(input("Classificações de entregas anteriores: "))
+c = int(input("Distancia Total: "))
+
+features = np.array([[a,b,c]])
+print("Tempo de Entrega previsto em minutos: ", model.predict(features))
