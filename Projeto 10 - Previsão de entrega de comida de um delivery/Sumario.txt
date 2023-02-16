@@ -1,0 +1,2 @@
+Para prever o tempo de entrega do delivery em tempo real, é necessário calcular a distância entre o ponto de preparação dos alimentos e o ponto de consumo dos alimentos. 
+Depois de encontrar a distância entre o restaurante e os locais de entrega, você precisa encontrar relações entre o tempo gasto pelos parceiros de entrega para entregar a comida no passado para a mesma distância. 
